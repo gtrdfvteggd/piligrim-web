@@ -1,0 +1,788 @@
+/* font-family: "Bigshot One", serif;
+   font-family: "Kalam", cursive; */
+
+html {
+box-sizing: border-box;
+}
+*, *::before, *::after {
+box-sizing: inherit;
+}
+body {
+margin: 0;
+font-family: 'Bigshot One', sans-serif;
+background-color: #000;
+color: #fff;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.text-h2{
+    font-family: Bigshot One, sans-serif;
+    font-weight: 500;
+    font-size: 150px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.text-h3{
+    font-family: Bigshot One, sans-serif;
+    font-weight: 500;
+    font-size: 96px;
+}
+.text-p{
+    font-family: Kalam, sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+}
+.text-p1{
+    font-family: Bigshot One, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+
+:root {
+--accent-color: #40457c;
+--white-color: #ffffff;
+}
+
+header {
+    width: 1840px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+.corner-grid {
+    position: absolute;
+    top: 0;
+    left: -45px;
+    width: 800px; /* подбери под нужный размер */
+    height: auto;
+    z-index: 1; /* чтобы была над фоном, но под текстом */
+    pointer-events: none; /* чтобы не мешала кликам */
+}
+  
+.corner-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.glow-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.glow-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px; /* подбирается под птицу */
+    height: 700px;
+    background: radial-gradient(circle, #40457c 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+  
+.glow-wrapper img {
+    position: relative;
+    z-index: 1;
+    width: 950px; /* если нужно, можешь изменить */
+}
+
+/* header img {
+    max-width: 1000px;
+    min-height: 1000px;
+} */
+.left {
+    margin-left: 35px;
+    margin-top: -70px;
+}
+
+.logo {
+    font-size: 150px;
+    color: var(--white-color);
+    margin-top: 40px;
+}
+.subtitle,
+.location {
+    font-family: 'Kalam', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    margin: 0;
+}
+.location {
+color: var(--accent-color);
+}
+
+.info {
+    width: 1570px;
+    height: 327px;
+    margin-bottom: 150px;
+}
+.affiliation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1570px;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.affiliation-box {
+    color: var(--accent-color);
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    position: relative;
+    flex: 1 1 30%;
+    font-family: 'Bigshot One', sans-serif;
+}
+.affiliation-box.left::before,
+.affiliation-box.left::after,
+.affiliation-box.right::before,
+.affiliation-box.right::after {
+content: '';
+position: absolute;
+border: 1px solid #ccc;
+}
+.affiliation-box.left::before {
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 1px;
+}
+.affiliation-box.left::after {
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+}
+.affiliation-box.right::before {
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+}
+.affiliation-box.right::after {
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 1px;
+}
+
+.cards-wrapper {
+    overflow: visible; /* важно! */
+    position: relative;
+    padding: 60px; /* чтобы углы точно влезали */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.card-wrapper {
+    /* position: relative;
+    width: fit-content;
+    overflow: visible;
+    margin: 80px 0; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+}
+
+.vertical-line {
+    position: absolute;
+    height: 100%; /* отрегулируй по вкусу */
+    width: auto;
+    z-index: 2;
+}
+  
+.left-line {
+    left: -275px; /* насколько отступить от карточки */
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+.right-line {
+    right: -310px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.left-line2 {
+    left: -131px; /* насколько отступить от карточки */
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+.right-line2 {
+    right: -167px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.left-line3 {
+    left: -262px; /* насколько отступить от карточки */
+    top: 50%;
+    transform: translateY(-50%);
+}
+  
+.right-line3 {
+    right: -295px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* Горизонтальные линии */
+.card-wrapper::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(255, 255, 255);
+}
+
+
+.card-wrapper::after {
+  bottom: -30px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    background-color: #3b3f86;
+    border-radius: 75px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    max-width: 1260px;
+    height: 679px;
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 60px;
+    margin-bottom: 200px;
+    z-index: 2;
+}
+/* .card-wrapper:not(:last-child) .card {
+    margin-bottom: 280px;
+} */
+
+
+.card-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-image img {
+    height: 700px;
+    object-fit: contain;
+    margin-left: -60px;
+    margin-right: 40px;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    color: white;
+    max-width: 500px;
+}
+
+.card-title {
+    font-size: 48px;
+    line-height: 1.4;
+    margin-bottom: 32px;
+    white-space: pre-line; /* сохраняет переносы строк */
+}
+
+.card-text {
+    font-size: 40px;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    max-width: 360px;
+}
+
+.card-link {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 2px solid #fff;
+    font-weight: bold;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.card-link:hover {
+    background-color: white;
+    color: #3b3f86;
+}
+
+.card-corner {
+    position: absolute;
+    width: 191px;
+    height: 190px;
+    z-index: 9999; /* Поверх всего */
+}
+
+.top-left {
+    top: -20px;
+    left: -20px;
+}
+  
+.top-right {
+    top: -20px;
+    right: -20px;
+}
+
+
+.join-section {
+    background-color: #000;
+    padding: 100px 0;
+    width: 1920px;
+    height: 464px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+  
+.join-container {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+}
+  
+.join-content {
+    position: relative;
+    z-index: 2;
+}
+  
+.join-text {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: bold;
+    margin: 20px 0;
+    position: relative; /* нужно, чтобы z-index работал */
+    z-index: 2;
+}
+  
+.line-top,
+.line-bottom {
+    width: 130px;
+    height: 1px;
+    background-color: #D9D9D9;
+    margin: 0 auto;
+}
+  
+.grid-left,
+.grid-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    /* max-height: 220px; */
+    opacity: 0.3;
+    pointer-events: none;
+}
+  
+.grid-left {
+    left: -20px;
+}
+  
+.grid-right {
+    right: 0px;
+}
+.underline-text {
+    display: inline-block;
+    position: relative;
+    font-style: italic;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+}
+  
+.underline-text::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    width: calc(100% + 20px); /* шире текста на 10px с каждой стороны */
+    bottom: -4px; /* немного ниже текста*/
+    height: 1px;
+    background-color: white;
+}
+  
+.footer {
+    background-color: #40457c;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+  
+.footer_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1260px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+  
+.text-h2 {
+    font-family: 'Bigshot One', sans-serif;
+    font-size: 64px;
+    color: white;
+    margin-bottom: 20px;
+}
+  
+.footer_cop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    text-align: center;
+}
+  
+.text-h3 {
+    font-size: 32px;
+    color: white;
+    font-style: italic;
+}
+.footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+  
+.footer a:hover {
+    color: #ffffff;
+}
+  
+.footer-frame {
+    position: absolute;
+    width: 700px;
+    max-width: 100%;
+    height: auto;
+    opacity: 0.3;
+    pointer-events: none;
+}
+  
+.footer-frame.left {
+    top: 30px;
+    left: 200px;
+    margin: 0;
+}
+  
+.footer-frame.right {
+    top: 30px;
+    right: 200px;
+    transform: rotate(180deg);
+
+}
+  
+  /* Адаптивность */
+@media (max-width: 768px) {
+    .text-h2 {
+      font-size: 40px;
+    }
+    .text-h3 {
+      font-size: 16px;
+    }
+    .footer-frame {
+      width: 300px;
+    }
+  }
+@media (max-width: 768px) {
+.affiliation-container {
+    flex-direction: column;
+    align-items: center;
+    font-size: 28px;
+}
+.affiliation-box {
+    flex: 1 1 100%;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.affiliation-box.left::before,
+.affiliation-box.left::after,
+.affiliation-box.right::before,
+.affiliation-box.right::after {
+    display: none;
+}
+.card {
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+}
+.card img {
+    width: 80%;
+    height: auto;
+    margin: 0 auto 20px;
+}
+.card-content {
+    max-width: 100%;
+}
+.card-title {
+    font-size: 28px;
+}
+.card-text {
+    font-size: 18px;
+}
+.card-link {
+    font-size: 16px;
+}
+}
+@media (max-width: 1024px) {
+    header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+  
+    .glow-wrapper img {
+      width: 70vw;
+    }
+  
+    .logo {
+      font-size: 100px;
+    }
+  
+    .subtitle,
+    .location {
+      font-size: 32px;
+    }
+  
+    .corner-grid {
+      width: 250px;
+      top: -30px;
+      left: -30px;
+    }
+  
+    .info {
+      width: 100%;
+      height: auto;
+      margin-bottom: 80px;
+      padding: 20px;
+    }
+  
+    .card {
+      flex-direction: column;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .card-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .card-image img {
+      height: auto;
+      width: 80%;
+      margin: 0 auto 20px;
+    }
+  
+    .text_1 {
+      align-items: center;
+    }
+  
+    .card-title {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+  
+    .card-text {
+      font-size: 18px;
+      max-width: none;
+    }
+  
+    .card-link {
+      font-size: 16px;
+    }
+  
+    .vertical-line,
+    .card-corner {
+      display: none;
+    }
+  
+    .join-section {
+      flex-direction: column;
+      height: auto;
+      padding: 60px 20px;
+    }
+  
+    .join-text {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .grid-left,
+    .grid-right {
+      display: none;
+    }
+  
+    .footer_cop {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .footer-frame {
+      display: none;
+    }
+}
+  
+@media (max-width: 480px) {
+    .logo {
+      font-size: 64px;
+    }
+  
+    .subtitle,
+    .location {
+      font-size: 24px;
+    }
+  
+    .text-h2 {
+      font-size: 32px;
+    }
+  
+    .text-h3 {
+      font-size: 16px;
+    }
+  
+    .card-title {
+      font-size: 24px;
+    }
+  
+    .card-text {
+      font-size: 16px;
+    }
+  
+    .card-link {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  
+    .glow-wrapper::before {
+      width: 300px;
+      height: 300px;
+      filter: blur(60px);
+    }
+  
+    .glow-wrapper img {
+      width: 90vw;
+    }
+}
+  
+/* стили для страницы с историей*/
+
+.history-container {
+}
+.history_flex {
+    display: flex;
+    justify-content: space-around;
+}
+.history-text {
+    width: 890px;
+    font-size: 40px;
+    padding-top: 91px;
+    padding-left: 40px;
+    line-height: 147%;
+
+}
+.history-text1 {
+    width: 1813px;
+    font-size: 40px;
+    padding-left: 40px;
+    line-height: 147%;
+}
+.history-bird {
+    position: relative;
+    padding-top: 88px;
+}
+.birt_img{
+    position: relative;
+    width: 900px;
+    height: 900px;
+    z-index: 1;
+}
+.history-bird::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px; /* подбирается под птицу */
+    height: 700px;
+    background: radial-gradient(circle, #40457c 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+
+
+/* стили для страницы с творчеством*/
+.creativity-page {
+    padding-top: 91px;
+    padding-left: 40px;
+}
+.content-container {
+}
+.content-flex {
+    display: flex;
+}
+.text-block {
+    width: 850px;
+    font-size: 40px;
+    line-height: 147%;
+}
+.image-block {
+    margin-top: 175px;
+}
+
+/* стили для страницы с жизнью*/
+.life-page {
+    margin: 40px;
+}
+.back {
+}
+.content-container {
+}
+.content-flex {
+    justify-content: space-between;
+}
+.text-block {
+    width: 854px;
+}
+.history-bird {
+}
+.birt_img {
+}
+.text_block2 {
+    font-size: 40px;
+    line-height: 147%;
+
+}
