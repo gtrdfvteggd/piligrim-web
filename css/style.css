@@ -58,7 +58,7 @@ header {
     position: absolute;
     top: 0;
     left: -45px;
-    width: 800px; /* подбери под нужный размер */
+    width: 800px; /* подбрать под нужный размер */
     height: auto;
     z-index: 1; /* чтобы была над фоном, но под текстом */
     pointer-events: none; /* чтобы не мешала кликам */
@@ -203,7 +203,7 @@ border: 1px solid #ccc;
 
 .vertical-line {
     position: absolute;
-    height: 100%; /* отрегулируй по вкусу */
+    height: 100%; /* отрегулировать по вкусу */
     width: auto;
     z-index: 2;
 }
@@ -510,7 +510,7 @@ border: 1px solid #ccc;
     .footer-frame {
       width: 300px;
     }
-  }
+}
 @media (max-width: 768px) {
 .affiliation-container {
     flex-direction: column;
@@ -559,6 +559,7 @@ border: 1px solid #ccc;
       align-items: center;
       text-align: center;
       width: 100%;
+      padding: 20px;
     }
   
     .glow-wrapper img {
@@ -586,11 +587,22 @@ border: 1px solid #ccc;
       margin-bottom: 80px;
       padding: 20px;
     }
+    .glow-wrapper img {
+        width: 80vw;
+    }
+
+  .glow-wrapper::before {
+        width: 400px;
+        height: 400px;
+        filter: blur(80px);
+  }
   
     .card {
-      flex-direction: column;
-      height: auto;
-      padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        height: auto;
+        width: 95%;
     }
   
     .card-content {
@@ -607,6 +619,7 @@ border: 1px solid #ccc;
   
     .text_1 {
       align-items: center;
+      text-align: center;
     }
   
     .card-title {
@@ -652,6 +665,46 @@ border: 1px solid #ccc;
     .footer-frame {
       display: none;
     }
+}
+
+@media (max-width: 600px) {
+  .logo {
+        font-size: 64px;
+  }
+
+  .subtitle,
+  .location {
+        font-size: 24px;
+  }
+
+  .card-title {
+    font-size: 26px;
+  }
+
+  .card-text {
+        font-size: 16px;
+  }
+
+  .card-link {
+        font-size: 14px;
+        padding: 10px 16px;
+  }
+
+  .join-text {
+        font-size: 20px;
+  }
+
+  .text-h2 {
+        font-size: 28px;
+  }
+
+  .text-h3 {
+        font-size: 14px;
+  }
+
+  .footer {
+        padding: 40px 10px;
+  }
 }
   
 @media (max-width: 480px) {
