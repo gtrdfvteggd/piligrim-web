@@ -3,6 +3,11 @@
 
 html {
 box-sizing: border-box;
+margin: 0;
+padding: 0;
+width: 100%;
+/* box-sizing: border-box; */
+overflow-x: hidden;
 }
 *, *::before, *::after {
 box-sizing: inherit;
@@ -351,12 +356,17 @@ border: 1px solid #ccc;
 
 .join-section {
     background-color: #000;
-    padding: 100px 0;
-    width: 1920px;
-    height: 464px;
+    padding: 100px 20px;
+    width: 100%;
+    max-width: 1920px;
+    box-sizing: border-box;
+    height: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
     position: relative;
+    overflow: hidden;
 }
   
 .join-container {
@@ -502,56 +512,85 @@ border: 1px solid #ccc;
   /* Адаптивность */
 @media (max-width: 768px) {
     .text-h2 {
-      font-size: 40px;
+        font-size: 40px;
     }
-    .text-h3 {
-      font-size: 16px;
+        .text-h3 {
+    font-size: 16px;
     }
     .footer-frame {
-      width: 300px;
+        width: 300px;
     }
 }
 @media (max-width: 768px) {
-.affiliation-container {
-    flex-direction: column;
-    align-items: center;
-    font-size: 28px;
-}
-.affiliation-box {
-    flex: 1 1 100%;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-.affiliation-box.left::before,
-.affiliation-box.left::after,
-.affiliation-box.right::before,
-.affiliation-box.right::after {
+    .affiliation-container {
+        flex-direction: column;
+        align-items: center;
+        font-size: 28px;
+    }
+    .affiliation-box {
+        flex: 1 1 100%;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .affiliation-box.left::before,
+    .affiliation-box.left::after,
+    .affiliation-box.right::before,
+    .affiliation-box.right::after {
+        display: none;
+    }
+    .card {
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .card img {
+        width: 80%;
+        height: auto;
+        margin: 0 auto 20px;
+    }
+    .card-content {
+        max-width: 100%;
+    }
+    .card-title {
+        font-size: 28px;
+    }
+    .card-text {
+        font-size: 18px;
+    }
+    .card-link {
+        font-size: 16px;
+    }
+    .grid-left,
+    .grid-right {
     display: none;
-}
-.card {
-    flex-direction: column;
-    width: 95%;
-    height: auto;
-    padding: 20px;
-    text-align: center;
-}
-.card img {
-    width: 80%;
-    height: auto;
-    margin: 0 auto 20px;
-}
-.card-content {
-    max-width: 100%;
-}
-.card-title {
-    font-size: 28px;
-}
-.card-text {
-    font-size: 18px;
-}
-.card-link {
-    font-size: 16px;
-}
+  }
+
+    .join-section {
+        position: relative; /* или auto, если не нужно во весь экран */
+        height: 100vh;
+        padding: 60px 20px;    
+        display: flex;
+        align-items: center;
+    }
+    .join-content{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .join-text {
+        font-size: 24px;
+    }
+    .grid-left,
+    .grid-right {
+        display: none;
+    }
+
 }
 @media (max-width: 1024px) {
     header {
@@ -838,4 +877,84 @@ border: 1px solid #ccc;
     font-size: 40px;
     line-height: 147%;
 
+}
+
+/* 📱 Адаптивность для страниц: История, Творчество, Жизнь */
+
+@media (max-width: 1024px) {
+    .history_flex,
+    .content-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+  }
+
+    .history-text,
+    .history-text1,
+    .text-block,
+    .text_block2 {
+        width: 90%;
+        font-size: 28px;
+        padding-left: 0;
+    }
+
+    .birt_img {
+        width: 80%;
+        height: auto;
+        max-width: 600px;
+    }
+
+    .history-bird::after {
+        width: 500px;
+        height: 500px;
+        filter: blur(80px);
+    }
+
+    .image-block {
+        margin-top: 40px;
+    }
+
+    .life-page,
+    .creativity-page {
+        padding: 40px 20px;
+    }
+
+    .history-container {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .history-text,
+    .history-text1,
+    .text-block,
+    .text_block2 {
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    .birt_img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .history-bird::after {
+        width: 300px;
+        height: 300px;
+        filter: blur(60px);
+    }
+
+    .history-container,
+    .life-page,
+    .creativity-page {
+        margin: 0;
+        padding: 20px;
+    }
+
+    .image-block {
+        margin-top: 20px;
+    }
 }
